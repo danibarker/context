@@ -15,6 +15,7 @@ const MyContextProvider = ({ children }) => {
   // we'll just make it a simple count variable to show how it works
   const [myGlobalState, setMyGlobalState] = useState(0);
 
+  // functions I want the consumers to be able to access to update the state
   const incrementMyGlobalState = () => {
     setMyGlobalState(myGlobalState + 1);
   };
@@ -30,6 +31,7 @@ const MyContextProvider = ({ children }) => {
     incrementMyGlobalState,
     decrementMyGlobalState,
   };
+
   // I pass the object containing the values to the provider by setting the value prop
   return <ContextProvider value={myContextValues}>{children}</ContextProvider>;
 };
