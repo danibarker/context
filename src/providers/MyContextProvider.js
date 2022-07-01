@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-// This is the context object that will be used by the consumers.
+// This is the context that will be used by the consumers.
 // It will receive values from the context provider
 export const MyContext = createContext(null);
 
@@ -32,7 +32,8 @@ const MyContextProvider = ({ children }) => {
     decrementMyGlobalState,
   };
 
-  // I pass the object containing the values to the provider by setting the value prop
+  // I pass the object containing the values to the provider component by setting the value prop
+  // and render its children inside of it
   return <ContextProvider value={myContextValues}>{children}</ContextProvider>;
 };
 
