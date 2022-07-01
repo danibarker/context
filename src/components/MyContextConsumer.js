@@ -6,6 +6,8 @@ const MyContextConsumer = () => {
   // to me as a child of the Provider component.
   const myContext = useContext(MyContext);
 
+  // here in this component, I only need the update functions and not the state value
+  // itself, I just pull those two update functions out of the context object
   const { incrementMyGlobalState, decrementMyGlobalState } = myContext;
 
   return (

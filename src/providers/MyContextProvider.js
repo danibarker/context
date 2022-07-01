@@ -30,7 +30,7 @@ const MyContextProvider = ({ children }) => {
     incrementMyGlobalState,
     decrementMyGlobalState,
   };
-
+  // I pass the object containing the values to the provider by setting the value prop
   return <ContextProvider value={myContextValues}>{children}</ContextProvider>;
 };
 
