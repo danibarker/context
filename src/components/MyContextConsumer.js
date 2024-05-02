@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { MyContext } from "../providers/MyContextProvider";
+import React from "react";
+import { useMyContext } from "../providers/MyContextProvider";
 
 const MyContextConsumer = () => {
-  // I use the useContext hook to access the context values that the provider has provided
+  // I use the useMyContext hook to access the context values that the provider has provided
   // to me as a child of the Provider component.
-  const myContext = useContext(MyContext);
+  const myContext = useMyContext();
 
   // here in this component, I only need the update functions and not the state value
   // itself, I just pull those two update functions out of the context object

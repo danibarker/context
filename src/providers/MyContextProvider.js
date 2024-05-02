@@ -1,9 +1,17 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 // This is the context that will be used by the consumers.
 // It will receive values from the context provider
-export const MyContext = createContext(null);
+const MyContext = createContext(null);
 
+// this is a hook that will be used by the consumers to access the context
+export const useMyContext = () => {
+  const context = useContext(MyContext);
+  if (!context) {
+    throw new Error("useMyContext must be used within a MyContextProvider");
+  }
+  return context;
+};
 /* 
 The context object contains a provider Component that will wrap 
 children components (the context consumers)
